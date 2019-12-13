@@ -13,6 +13,7 @@
         <module>transaction-in-local</module>
         <module>H2DataBase</module>
         <module>springboot-kafka</module>
+        <module>springboot-configuration</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
