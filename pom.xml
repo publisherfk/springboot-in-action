@@ -15,6 +15,7 @@
         <module>springboot-kafka</module>
         <module>webservice</module>
         <module>springboot-configuration</module>
+        <module>auto-configuration</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
