@@ -5,10 +5,7 @@ import com.heshi.h2db.domain.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionException;
-import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 @Service
 public class CustomerServiceInCode {
@@ -22,18 +19,18 @@ public class CustomerServiceInCode {
         if (null != customer.getId()) {
             throw new RuntimeException("用户已经存在");
         }
-        DefaultTransactionDefinition defaultTransactionDefinition = new DefaultTransactionDefinition();
-        defaultTransactionDefinition.setIsolationLevel(TransactionDefinition.ISOLATION_SERIALIZABLE);
-        defaultTransactionDefinition.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
-        defaultTransactionDefinition.setTimeout(15);
-        TransactionStatus status = transactionManager.getTransaction(defaultTransactionDefinition);
+//        DefaultTransactionDefinition defaultTransactionDefinition = new DefaultTransactionDefinition();
+//        defaultTransactionDefinition.setIsolationLevel(TransactionDefinition.ISOLATION_SERIALIZABLE);
+//        defaultTransactionDefinition.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
+//        defaultTransactionDefinition.setTimeout(15);
+//        TransactionStatus status = transactionManager.getTransaction(defaultTransactionDefinition);
         try {
             customer.setUserName("Code:" + customer.getUserName());
             customerRepository.save(customer);
-            transactionManager.commit(status);
+//            transactionManager.commit(status);
             return customer;
         } catch (TransactionException e) {
-            transactionManager.rollback(status);
+//            transactionManager.rollback(status);
             throw e;
         }
     }

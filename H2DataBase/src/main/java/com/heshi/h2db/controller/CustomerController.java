@@ -27,7 +27,7 @@ public class CustomerController {
         return customerServiceInAnnotation.create(customer);
     }
 
-    @PostMapping("/code")
+    @PostMapping("/create")
     public Customer createInCode(@RequestBody Customer customer) {
         return customerServiceInCode.create(customer);
     }
