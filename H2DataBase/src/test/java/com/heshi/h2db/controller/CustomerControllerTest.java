@@ -24,7 +24,7 @@ class CustomerControllerTest {
     @Test
     void createInCode() throws Exception {
         Customer customer = new Customer();
-        customer.setUserName("hedi");
+        customer.setUserName("hedi" + Math.random());
         customer.setPassword("k");
         customer.setRole("r");
         String mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/base/create").contentType(MediaType.APPLICATION_JSON)
