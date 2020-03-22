@@ -19,6 +19,7 @@
         <module>redis-in-action</module>
         <module>springboot-h2</module>
         <module>efficient-programming</module>
+        <module>springboot-redis</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
