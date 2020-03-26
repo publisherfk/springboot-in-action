@@ -17,6 +17,10 @@
         <module>springboot-configuration</module>
         <module>auto-configuration</module>
         <module>redis-in-action</module>
+        <module>server1</module>
+        <module>server2</module>
+        <module>netty-in-action</module>
+        <module>sprigboot-event</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
