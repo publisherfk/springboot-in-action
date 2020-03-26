@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/base")
-public class ProduceController {
+public class  ProduceController {
     Logger logger = LoggerFactory.getLogger(ProduceController.class);
     @Autowired
     private SimpleProducer producer;
