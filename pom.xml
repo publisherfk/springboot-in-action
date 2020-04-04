@@ -24,6 +24,9 @@
         <module>springboot-h2</module>
         <module>efficient-programming</module>
         <module>springboot-redis</module>
+        <module>springboot-mondoDB</module>
+        <module>springboot-mongoDB</module>
+        <module>springboot-mongodb</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
