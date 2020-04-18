@@ -6,6 +6,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 @RestController
 @RequestMapping("/base/redis/hash")
 public class RedisHashTestController {
@@ -40,5 +45,15 @@ public class RedisHashTestController {
     @PutMapping("/increment")
     public Object redisIncrement(String key, String valueKey, long delta) {
         return redisTestService.redisIncrement(key, valueKey, delta);
+    }
+
+    @GetMapping("/multiGet")
+    public Object redisMultiGet(String key) {
+        List<String> keys = new ArrayList() {{
+            add("aa");
+            add("bb");
+        }};
+        List<Map> result = redisTestService.redisMultiGet(key, keys);
+        return result.stream().filter(map -> null != map).collect(Collectors.toList()).size();
     }
 }

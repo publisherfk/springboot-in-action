@@ -93,4 +93,15 @@ public class RedisHashTestService {
     public Long redisIncrement(String key, String valueKey, long delta) {
         return redisTemplate.boundHashOps(key).increment(valueKey, delta);
     }
+
+    /**
+     * 根据指定的hash对象key和键值对key集合,返回对应的键值对集合
+     *
+     * @param key
+     * @param valueKey
+     * @return
+     */
+    public List<Map> redisMultiGet(String key, List<String> valueKey) {
+        return redisTemplate.boundHashOps(key).multiGet(valueKey);
+    }
 }
