@@ -48,13 +48,27 @@ public class ProducerSample {
     }
 
     /**
+     * 同步发送 带callback
      *
-     *
-     * @return
+     * @param count
+     */
+    public static void producerSendWithCallBack(int count) {
+        Producer<String, String> producer = producer();
+        for (int i = 0; i < count; i++) {
+            ProducerRecord<String, String> producerRecord = new ProducerRecord<String, String>(TOPIC_NAME, "key-" + i, "value-" + i);
+            producer.send(producerRecord, (metadata, exception) -> {
+                System.out.println("send message offset is:" + metadata.offset());
+            });
+        }
+        producer.close();
+    }
+
+    /**
+     * @returnp
      */
     public static Producer producer() {
         Properties properties = new Properties();
-        properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.10.90.169:9092");
+        properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
         properties.setProperty(ProducerConfig.ACKS_CONFIG, "all");
         properties.setProperty(ProducerConfig.RETRIES_CONFIG, "0");
         properties.setProperty(ProducerConfig.BATCH_SIZE_CONFIG, "16384");
