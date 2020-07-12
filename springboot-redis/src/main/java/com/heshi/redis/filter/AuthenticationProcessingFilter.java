@@ -20,7 +20,7 @@ import java.util.Map;
  * @Date: 2020/4/17 21:06
  * @since
  */
-@Component
+//@Component
 public class AuthenticationProcessingFilter extends OncePerRequestFilter {
     Logger logger = LoggerFactory.getLogger(getClass());
     @Value("${authentication.api.url}")

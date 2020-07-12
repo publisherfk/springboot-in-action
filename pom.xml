@@ -29,6 +29,7 @@
         <module>springboot-mongodb</module>
         <module>spring-session1</module>
         <module>spring-session2</module>
+        <module>jvm-in-action</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

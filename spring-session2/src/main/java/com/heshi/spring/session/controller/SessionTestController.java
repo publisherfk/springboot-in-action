@@ -30,4 +30,10 @@ public class SessionTestController {
         HttpSession session = request.getSession();
         return session.getAttribute(key);
     }
+
+    @GetMapping("/getSessionId")
+    public Object getSessionId() {
+        HttpSession session = request.getSession();
+        return session.getId();
+    }
 }
